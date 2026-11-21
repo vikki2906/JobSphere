@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JobSphere - Modern tech careers portal. Find verified engineering, design, and product roles at top companies with transparent salaries.">
+  <title>JobSphere | Find Your Next Tech Role Without the Noise</title>
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Modular CSS Architecture -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Site Header (Sticky Frosted Glass)
+       ========================================================================== -->
+  <header class="site-header">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation menu">
+    <div class="container header-inner">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="brand" aria-label="JobSphere Home">
+        <div class="brand-icon-wrapper">
+          <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+        <span class="brand-name">Job<span>Sphere</span></span>
+      </a>
+
+      <!-- Navigation Container (Desktop: contents / Mobile: dropdown drawer) -->
+      <div class="nav-container">
+        <!-- Navigation Links -->
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <a href="#jobs" class="nav-link active">Find Jobs</a>
+          <a href="#companies" class="nav-link">Companies</a>
+          <a href="#salaries" class="nav-link">Salaries</a>
+          <a href="#why-us" class="nav-link">Why JobSphere</a>
+        </nav>
+
+        <!-- Action Buttons -->
+        <div class="nav-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Sign In</a>
+          <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+        </div>
+      </div>
+
+      <!-- Hamburger Button (Visible on Mobile) -->
+      <label for="nav-toggle" class="nav-toggle-btn" aria-label="Open Navigation Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </label>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Hero & Advanced Search Section
+       ========================================================================== -->
+  <section class="hero-section">
+    <div class="hero-background-pattern"></div>
+    <div class="container hero-content">
+      
+      <!-- Live Badge Pill -->
+      <div class="hero-badge-pill">
+        <span class="pulse-dot"></span>
+        <span>Over 2,400+ verified engineering roles added this week</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="hero-title">
+        Find Your Next Tech Role <span class="text-gradient">Without the Noise</span>
+      </h1>
+      
+      <p class="hero-subtitle">
+        Direct connections to high-growth tech teams, verified salary transparency, and zero third-party recruiter spam.
+      </p>
+
+      <!-- Multi-input Search Box -->
+      <div class="search-container-box">
+        <form action="#search-results" method="GET" class="search-form-grid">
+          
+          <!-- Keyword Input -->
+          <div class="search-input-group">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" name="keywords" class="search-field" placeholder="Job title, keywords, or tech stack..." aria-label="Search tech jobs">
+          </div>
+
+          <!-- Location Dropdown/Input -->
+          <div class="search-input-group">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <select name="location" class="search-select" aria-label="Select preferred location">
+              <option value="">Anywhere (India & Remote)</option>
+              <option value="remote" selected>Remote (India / Global)</option>
+              <option value="blr">Bengaluru, KA</option>
+              <option value="hyd">Hyderabad, TS</option>
+              <option value="pune">Pune, MH</option>
+              <option value="delhi">Delhi NCR / Gurgaon</option>
+              <option value="mumbai">Mumbai, MH</option>
+              <option value="sf">San Francisco, CA</option>
+              <option value="london">London, UK</option>
+            </select>
+          </div>
+
+          <!-- Job Type Dropdown -->
+          <div class="search-input-group">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            <select name="type" class="search-select" aria-label="Select employment type">
+              <option value="">All Employment Types</option>
+              <option value="fulltime" selected>Full-time</option>
+              <option value="contract">Contract</option>
+              <option value="parttime">Part-time</option>
+              <option value="internship">Internship</option>
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary search-btn">
+            <span>Search Jobs</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+
+        </form>
+      </div>
+
+      <!-- Popular Tags / Chips -->
+      <div class="search-chips-wrapper">
+        <span class="chips-label">Popular Searches:</span>
+        <a href="#tag-java" class="chip-tag">Java</a>
+        <a href="#tag-spring" class="chip-tag">Spring Boot</a>
+        <a href="#tag-react" class="chip-tag">React</a>
+        <a href="#tag-postgres" class="chip-tag">PostgreSQL</a>
+        <a href="#tag-go" class="chip-tag">Go</a>
+        <a href="#tag-kubernetes" class="chip-tag">Kubernetes</a>
+        <a href="#tag-remote" class="chip-tag">100% Remote</a>
+        <a href="#tag-ai" class="chip-tag">AI / LLMs</a>
+      </div>
+
+      <!-- Stats Strip -->
+      <div class="stats-strip">
+        <div class="stat-item">
+          <div class="stat-value">14,250+</div>
+          <div class="stat-label">Active Roles</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">3,400+</div>
+          <div class="stat-label">Verified Companies</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">₹24 LPA</div>
+          <div class="stat-label">Median Tech Salary</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">98%</div>
+          <div class="stat-label">Direct Team Response</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Main Content Area (Two-Column Layout: Filters + Feed)
+       ========================================================================== -->
+  <main class="main-content" id="jobs">
+    <div class="container">
+      <div class="portal-layout">
+
+        <!-- ====================================================================
+             Left Sidebar (Advanced Filters)
+             ==================================================================== -->
+        <aside class="portal-sidebar" aria-label="Job Search Filters">
+          <div class="filter-card">
+            
+            <div class="filter-card-header">
+              <h2 class="filter-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+                Filter Roles
+              </h2>
+              <button type="reset" class="filter-reset-btn">Reset All</button>
+            </div>
+
+            <!-- Filter Group: Job Category -->
+            <details class="filter-group" open>
+              <summary class="filter-group-header">
+                <span class="filter-group-title">Job Category</span>
+                <svg class="filter-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="filter-options-list">
+                
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="cat" value="backend" class="checkbox-native" checked>
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    Backend Engineering
+                  </span>
+                  <span class="filter-count-badge">84</span>
+                </label>
+
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="cat" value="frontend" class="checkbox-native">
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    Frontend & UI
+                  </span>
+                  <span class="filter-count-badge">52</span>
+                </label>
+
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="cat" value="fullstack" class="checkbox-native" checked>
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    Full Stack Development
+                  </span>
+                  <span class="filter-count-badge">67</span>
+                </label>
+
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="cat" value="devops" class="checkbox-native">
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    DevOps & Cloud Infra
+                  </span>
+                  <span class="filter-count-badge">39</span>
+                </label>
+
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="cat" value="aiml" class="checkbox-native">
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    AI, ML & Data Science
+                  </span>
+                  <span class="filter-count-badge">28</span>
+                </label>
+
+              </div>
+            </details>
+
+            <!-- Filter Group: Experience Level -->
+            <details class="filter-group" open>
+              <summary class="filter-group-header">
+                <span class="filter-group-title">Experience Level</span>
+                <svg class="filter-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="filter-options-list">
+                
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="exp" value="entry" class="checkbox-native">
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    Entry-Level (0-2 yrs)
+                  </span>
+                  <span class="filter-count-badge">19</span>
+                </label>
+
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="exp" value="mid" class="checkbox-native" checked>
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    Mid-Level (3-5 yrs)
+                  </span>
+                  <span class="filter-count-badge">74</span>
+                </label>
+
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="exp" value="senior" class="checkbox-native" checked>
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    Senior (5-8 yrs)
+                  </span>
+                  <span class="filter-count-badge">88</span>
+                </label>
+
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="exp" value="lead" class="checkbox-native">
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    Lead / Staff / Principal
+                  </span>
+                  <span class="filter-count-badge">31</span>
+                </label>
+
+              </div>
+            </details>
+
+            <!-- Filter Group: Minimum Salary Range -->
+            <details class="filter-group" open>
+              <summary class="filter-group-header">
+                <span class="filter-group-title">Minimum Salary (INR / ₹)</span>
+                <svg class="filter-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="range-slider-wrapper">
+                <input type="range" class="range-slider" min="6" max="60" value="18" step="2" aria-label="Filter minimum salary in Lakhs per annum">
+                <div class="range-labels">
+                  <span>₹6 LPA</span>
+                  <strong style="color: var(--color-primary);">₹18 LPA+</strong>
+                  <span>₹60 LPA+</span>
+                </div>
+              </div>
+            </details>
+
+            <!-- Filter Group: Remote Policy -->
+            <details class="filter-group" open>
+              <summary class="filter-group-header">
+                <span class="filter-group-title">Remote & Workplace</span>
+                <svg class="filter-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="filter-options-list">
+                
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="workplace" value="remote" class="checkbox-native" checked>
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    100% Fully Remote
+                  </span>
+                  <span class="filter-count-badge">112</span>
+                </label>
+
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="workplace" value="hybrid" class="checkbox-native">
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    Hybrid (1-2 days/mo)
+                  </span>
+                  <span class="filter-count-badge">45</span>
+                </label>
+
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="workplace" value="onsite" class="checkbox-native">
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    On-Site
+                  </span>
+                  <span class="filter-count-badge">18</span>
+                </label>
+
+              </div>
+            </details>
+
+            <!-- Filter Group: Employment Type -->
+            <details class="filter-group">
+              <summary class="filter-group-header">
+                <span class="filter-group-title">Employment Type</span>
+                <svg class="filter-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </summary>
+              <div class="filter-options-list">
+                
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="emp" value="ft" class="checkbox-native" checked>
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    Full-time Permanent
+                  </span>
+                  <span class="filter-count-badge">134</span>
+                </label>
+
+                <label class="checkbox-item">
+                  <span class="checkbox-label-wrap">
+                    <input type="checkbox" name="emp" value="contract" class="checkbox-native">
+                    <span class="checkbox-box">
+                      <svg class="checkbox-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    Contract / Freelance
+                  </span>
+                  <span class="filter-count-badge">24</span>
+                </label>
+
+              </div>
+            </details>
+
+            <div style="margin-top: var(--space-6);">
+              <button class="btn btn-primary btn-full">Update Filters</button>
+            </div>
+
+          </div>
+        </aside>
+
+        <!-- ====================================================================
+             Right Column (Job Feed / Listings)
+             ==================================================================== -->
+        <section class="portal-feed" id="search-results" aria-label="Job Openings Feed">
+          
+          <!-- Feed Header: Match Count, Active Filter Pills, Sort Dropdown -->
+          <div class="feed-header-card">
+            
+            <div class="results-info">
+              <h2 class="results-count">Showing <strong>142</strong> open tech roles</h2>
+              
+              <div class="active-pill-tags">
+                <span class="active-tag">
+                  Remote
+                  <button type="button" class="active-tag-remove" aria-label="Remove filter">&times;</button>
+                </span>
+                <span class="active-tag">
+                  ₹18 LPA+
+                  <button type="button" class="active-tag-remove" aria-label="Remove filter">&times;</button>
+                </span>
+              </div>
+            </div>
+
+            <!-- Sort By Select -->
+            <div class="sort-container">
+              <label for="feed-sort" class="sort-label">Sort by:</label>
+              <select id="feed-sort" class="sort-select-box">
+                <option value="relevant" selected>Most Relevant</option>
+                <option value="newest">Newest First</option>
+                <option value="salary">Highest Salary</option>
+                <option value="applicants">Fewest Applicants</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- ================================================================
+               Job Card 1: Staff Backend Go Engineer (Datadog)
+               ================================================================ -->
+          <article class="job-card">
+            <div class="job-card-header">
+              <div class="job-company-details">
+                <div class="company-avatar" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">
+                  DD
+                </div>
+                <div class="company-meta-block">
+                  <div class="company-name-row">
+                    <span class="company-title">Datadog</span>
+                    <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                  <h3 class="job-title-link">
+                    <a href="#job-datadog">Staff Distributed Systems Engineer (Go / Kafka)</a>
+                  </h3>
+                </div>
+              </div>
+
+              <!-- Pure CSS Bookmark Toggle -->
+              <div class="bookmark-wrapper">
+                <input type="checkbox" id="save-job-1" class="bookmark-native" aria-label="Save this job">
+                <label for="save-job-1" class="bookmark-btn" title="Save Job">
+                  <svg class="bookmark-icon" viewBox="0 0 24 24">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </label>
+              </div>
+            </div>
+
+            <!-- Badges Row -->
+            <div class="job-badges-row">
+              <span class="badge badge-salary">₹35,00,000 – ₹50,00,000 / yr</span>
+              <span class="badge badge-remote">100% Remote</span>
+              <span class="badge badge-type">Full-Time</span>
+              <span class="badge badge-featured">Featured</span>
+              <span class="badge badge-location">Bengaluru / Remote</span>
+            </div>
+
+            <p class="job-snippet">
+              Architect and optimize real-time streaming telemetry pipelines ingesting over 50 trillion metrics daily. Experience with high-throughput Go microservices and distributed storage engines required.
+            </p>
+
+            <!-- Skills Row -->
+            <div class="card-skills-row">
+              <span class="skill-tag">Go</span>
+              <span class="skill-tag">Apache Kafka</span>
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">Distributed Systems</span>
+              <span class="skill-tag">PostgreSQL</span>
+            </div>
+
+            <!-- Card Action Footer -->
+            <div class="job-card-footer">
+              <span class="posted-timestamp">
+                <svg class="time-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Posted 2 hours ago
+              </span>
+
+              <div class="card-action-btns">
+                <a href="#view-job-1" class="btn btn-outline btn-sm">View Details</a>
+                <a href="#apply-job-1" class="btn btn-primary btn-sm">Quick Apply</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================================================================
+               Job Card 2: Senior Full Stack Engineer (Stripe)
+               ================================================================ -->
+          <article class="job-card">
+            <div class="job-card-header">
+              <div class="job-company-details">
+                <div class="company-avatar" style="background: linear-gradient(135deg, #0ea5e9, #0284c7);">
+                  ST
+                </div>
+                <div class="company-meta-block">
+                  <div class="company-name-row">
+                    <span class="company-title">Stripe</span>
+                    <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                  <h3 class="job-title-link">
+                    <a href="#job-stripe">Senior Full Stack Developer (React, TypeScript & Java)</a>
+                  </h3>
+                </div>
+              </div>
+
+              <div class="bookmark-wrapper">
+                <input type="checkbox" id="save-job-2" class="bookmark-native" aria-label="Save this job">
+                <label for="save-job-2" class="bookmark-btn" title="Save Job">
+                  <svg class="bookmark-icon" viewBox="0 0 24 24">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </label>
+              </div>
+            </div>
+
+            <div class="job-badges-row">
+              <span class="badge badge-salary">₹28,00,000 – ₹42,00,000 / yr</span>
+              <span class="badge badge-remote">Remote (India / Global)</span>
+              <span class="badge badge-type">Full-Time</span>
+              <span class="badge badge-location">Bengaluru / Hyderabad</span>
+            </div>
+
+            <p class="job-snippet">
+              Build next-generation developer tooling and merchant onboarding interfaces for global banking APIs. Requires rigorous craftsmanship in TypeScript, React, and resilient Java backend systems.
+            </p>
+
+            <div class="card-skills-row">
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Spring Boot</span>
+              <span class="skill-tag">REST APIs</span>
+            </div>
+
+            <div class="job-card-footer">
+              <span class="posted-timestamp">
+                <svg class="time-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Posted 4 hours ago
+              </span>
+
+              <div class="card-action-btns">
+                <a href="#view-job-2" class="btn btn-outline btn-sm">View Details</a>
+                <a href="#apply-job-2" class="btn btn-primary btn-sm">Quick Apply</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================================================================
+               Job Card 3: Lead Cloud & SRE Architect (Snowflake)
+               ================================================================ -->
+          <article class="job-card">
+            <div class="job-card-header">
+              <div class="job-company-details">
+                <div class="company-avatar" style="background: linear-gradient(135deg, #10b981, #059669);">
+                  SF
+                </div>
+                <div class="company-meta-block">
+                  <div class="company-name-row">
+                    <span class="company-title">Snowflake</span>
+                    <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                  <h3 class="job-title-link">
+                    <a href="#job-snowflake">Lead Site Reliability Engineer & Kubernetes Architect</a>
+                  </h3>
+                </div>
+              </div>
+
+              <div class="bookmark-wrapper">
+                <input type="checkbox" id="save-job-3" class="bookmark-native" aria-label="Save this job">
+                <label for="save-job-3" class="bookmark-btn" title="Save Job">
+                  <svg class="bookmark-icon" viewBox="0 0 24 24">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </label>
+              </div>
+            </div>
+
+            <div class="job-badges-row">
+              <span class="badge badge-salary">₹42,00,000 – ₹60,00,000 / yr</span>
+              <span class="badge badge-remote">Worldwide Remote</span>
+              <span class="badge badge-type">Full-Time</span>
+              <span class="badge badge-featured">Urgent</span>
+              <span class="badge badge-location">Pune / Remote</span>
+            </div>
+
+            <p class="job-snippet">
+              Lead multi-region Kubernetes clusters across AWS and GCP supporting petabyte-scale analytical workloads. Deep expertise in Terraform, Prometheus monitoring, and zero-downtime rolling upgrades.
+            </p>
+
+            <div class="card-skills-row">
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">Terraform</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">GCP</span>
+              <span class="skill-tag">Prometheus</span>
+            </div>
+
+            <div class="job-card-footer">
+              <span class="posted-timestamp">
+                <svg class="time-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Posted 6 hours ago
+              </span>
+
+              <div class="card-action-btns">
+                <a href="#view-job-3" class="btn btn-outline btn-sm">View Details</a>
+                <a href="#apply-job-3" class="btn btn-primary btn-sm">Quick Apply</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================================================================
+               Job Card 4: Senior Backend Java / Spring Engineer (Vercel)
+               ================================================================ -->
+          <article class="job-card">
+            <div class="job-card-header">
+              <div class="job-company-details">
+                <div class="company-avatar" style="background: linear-gradient(135deg, #1e293b, #0f172a);">
+                  VC
+                </div>
+                <div class="company-meta-block">
+                  <div class="company-name-row">
+                    <span class="company-title">Vercel</span>
+                    <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                  <h3 class="job-title-link">
+                    <a href="#job-vercel">Senior Platform Engineer (Java 21, Spring Boot & PostgreSQL)</a>
+                  </h3>
+                </div>
+              </div>
+
+              <div class="bookmark-wrapper">
+                <input type="checkbox" id="save-job-4" class="bookmark-native" aria-label="Save this job">
+                <label for="save-job-4" class="bookmark-btn" title="Save Job">
+                  <svg class="bookmark-icon" viewBox="0 0 24 24">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </label>
+              </div>
+            </div>
+
+            <div class="job-badges-row">
+              <span class="badge badge-salary">₹25,00,000 – ₹36,00,000 / yr</span>
+              <span class="badge badge-remote">100% Remote</span>
+              <span class="badge badge-type">Full-Time</span>
+              <span class="badge badge-location">Remote (India / Global)</span>
+            </div>
+
+            <p class="job-snippet">
+              Scale enterprise billing and telemetry systems. Design performant SQL schemas on PostgreSQL, optimize JPA/Hibernate query execution, and implement robust transactional boundary guarantees.
+            </p>
+
+            <div class="card-skills-row">
+              <span class="skill-tag">Java 21</span>
+              <span class="skill-tag">Spring Boot 3</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Redis</span>
+              <span class="skill-tag">Docker</span>
+            </div>
+
+            <div class="job-card-footer">
+              <span class="posted-timestamp">
+                <svg class="time-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Posted 8 hours ago
+              </span>
+
+              <div class="card-action-btns">
+                <a href="#view-job-4" class="btn btn-outline btn-sm">View Details</a>
+                <a href="#apply-job-4" class="btn btn-primary btn-sm">Quick Apply</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================================================================
+               Job Card 5: Machine Learning Platform Engineer (Figma)
+               ================================================================ -->
+          <article class="job-card">
+            <div class="job-card-header">
+              <div class="job-company-details">
+                <div class="company-avatar" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+                  FG
+                </div>
+                <div class="company-meta-block">
+                  <div class="company-name-row">
+                    <span class="company-title">Figma</span>
+                    <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                  <h3 class="job-title-link">
+                    <a href="#job-figma">Staff AI/ML Infrastructure Engineer (PyTorch, Ray & Rust)</a>
+                  </h3>
+                </div>
+              </div>
+
+              <div class="bookmark-wrapper">
+                <input type="checkbox" id="save-job-5" class="bookmark-native" aria-label="Save this job">
+                <label for="save-job-5" class="bookmark-btn" title="Save Job">
+                  <svg class="bookmark-icon" viewBox="0 0 24 24">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </label>
+              </div>
+            </div>
+
+            <div class="job-badges-row">
+              <span class="badge badge-salary">₹38,00,000 – ₹55,00,000 / yr</span>
+              <span class="badge badge-remote">Hybrid / Remote</span>
+              <span class="badge badge-type">Full-Time</span>
+              <span class="badge badge-location">Bengaluru / Hybrid</span>
+            </div>
+
+            <p class="job-snippet">
+              Develop high-throughput GPU serving infrastructure powering collaborative generative design features. Experience with Triton inference server, PyTorch distributed pipelines, and low-latency systems.
+            </p>
+
+            <div class="card-skills-row">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">Rust</span>
+              <span class="skill-tag">CUDA</span>
+              <span class="skill-tag">Ray</span>
+            </div>
+
+            <div class="job-card-footer">
+              <span class="posted-timestamp">
+                <svg class="time-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Posted 12 hours ago
+              </span>
+
+              <div class="card-action-btns">
+                <a href="#view-job-5" class="btn btn-outline btn-sm">View Details</a>
+                <a href="#apply-job-5" class="btn btn-primary btn-sm">Quick Apply</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================================================================
+               Job Card 6: Senior Frontend Architect (Linear)
+               ================================================================ -->
+          <article class="job-card">
+            <div class="job-card-header">
+              <div class="job-company-details">
+                <div class="company-avatar" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                  LN
+                </div>
+                <div class="company-meta-block">
+                  <div class="company-name-row">
+                    <span class="company-title">Linear</span>
+                    <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                  <h3 class="job-title-link">
+                    <a href="#job-linear">Senior Frontend Engineer (WebAssembly, CSS Architecture & React)</a>
+                  </h3>
+                </div>
+              </div>
+
+              <div class="bookmark-wrapper">
+                <input type="checkbox" id="save-job-6" class="bookmark-native" aria-label="Save this job">
+                <label for="save-job-6" class="bookmark-btn" title="Save Job">
+                  <svg class="bookmark-icon" viewBox="0 0 24 24">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </label>
+              </div>
+            </div>
+
+            <div class="job-badges-row">
+              <span class="badge badge-salary">₹26,00,000 – ₹38,00,000 / yr</span>
+              <span class="badge badge-remote">100% Remote</span>
+              <span class="badge badge-type">Full-Time</span>
+              <span class="badge badge-location">Remote Worldwide</span>
+            </div>
+
+            <p class="job-snippet">
+              Shape the gold standard in web application performance and keyboard navigation ergonomics. Deep mastery of DOM rendering lifecycles, CSS layout algorithms, and state synchronization engines.
+            </p>
+
+            <div class="card-skills-row">
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">WebAssembly</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">IndexedDB</span>
+            </div>
+
+            <div class="job-card-footer">
+              <span class="posted-timestamp">
+                <svg class="time-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Posted 1 day ago
+              </span>
+
+              <div class="card-action-btns">
+                <a href="#view-job-6" class="btn btn-outline btn-sm">View Details</a>
+                <a href="#apply-job-6" class="btn btn-primary btn-sm">Quick Apply</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================================================================
+               Pagination Component
+               ================================================================ -->
+          <nav class="pagination-wrapper" aria-label="Job listings pages">
+            <a href="#prev" class="page-btn" aria-label="Previous page">&larr; Prev</a>
+            <a href="#page-1" class="page-btn active" aria-current="page">1</a>
+            <a href="#page-2" class="page-btn">2</a>
+            <a href="#page-3" class="page-btn">3</a>
+            <span class="page-ellipsis">&hellip;</span>
+            <a href="#page-12" class="page-btn">12</a>
+            <a href="#next" class="page-btn" aria-label="Next page">Next &rarr;</a>
+          </nav>
+
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       Featured Companies Section
+       ========================================================================== -->
+  <section class="featured-companies-section" id="companies">
+    <div class="container">
+      
+      <div class="section-header-centered">
+        <span class="section-eyebrow">Top Tech Workplaces</span>
+        <h2 class="section-title">Featured Companies Hiring Now</h2>
+        <p class="section-subtitle">
+          Join forward-thinking engineering organizations offering remote flexibility, competitive equity, and engineering-first cultures.
+        </p>
+      </div>
+
+      <div class="companies-grid">
+        
+        <!-- Company 1: Stripe -->
+        <article class="company-card">
+          <div class="company-card-top">
+            <div class="company-badge-logo" style="background: linear-gradient(135deg, #0ea5e9, #0284c7);">
+              ST
+            </div>
+            <div class="company-card-meta">
+              <h3 class="company-card-title">Stripe</h3>
+              <span class="company-card-industry">Financial Infrastructure & APIs</span>
+            </div>
+          </div>
+          <div class="company-card-details">
+            <span class="company-card-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              SF & Remote
+            </span>
+            <span class="company-card-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              7,000+ employees
+            </span>
+          </div>
+          <div class="company-card-footer">
+            <span class="open-jobs-pill">24 Open Positions</span>
+            <a href="#stripe-jobs" class="btn btn-outline btn-sm">View Jobs</a>
+          </div>
+        </article>
+
+        <!-- Company 2: Datadog -->
+        <article class="company-card">
+          <div class="company-card-top">
+            <div class="company-badge-logo" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">
+              DD
+            </div>
+            <div class="company-card-meta">
+              <h3 class="company-card-title">Datadog</h3>
+              <span class="company-card-industry">Observability & Security Cloud</span>
+            </div>
+          </div>
+          <div class="company-card-details">
+            <span class="company-card-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              New York & Remote
+            </span>
+            <span class="company-card-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg>
+              5,200+ employees
+            </span>
+          </div>
+          <div class="company-card-footer">
+            <span class="open-jobs-pill">18 Open Positions</span>
+            <a href="#datadog-jobs" class="btn btn-outline btn-sm">View Jobs</a>
+          </div>
+        </article>
+
+        <!-- Company 3: Vercel -->
+        <article class="company-card">
+          <div class="company-card-top">
+            <div class="company-badge-logo" style="background: linear-gradient(135deg, #1e293b, #0f172a);">
+              VC
+            </div>
+            <div class="company-card-meta">
+              <h3 class="company-card-title">Vercel</h3>
+              <span class="company-card-industry">Frontend Cloud Platform</span>
+            </div>
+          </div>
+          <div class="company-card-details">
+            <span class="company-card-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              100% Remote Global
+            </span>
+            <span class="company-card-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg>
+              850+ employees
+            </span>
+          </div>
+          <div class="company-card-footer">
+            <span class="open-jobs-pill">15 Open Positions</span>
+            <a href="#vercel-jobs" class="btn btn-outline btn-sm">View Jobs</a>
+          </div>
+        </article>
+
+        <!-- Company 4: Snowflake -->
+        <article class="company-card">
+          <div class="company-card-top">
+            <div class="company-badge-logo" style="background: linear-gradient(135deg, #10b981, #059669);">
+              SF
+            </div>
+            <div class="company-card-meta">
+              <h3 class="company-card-title">Snowflake</h3>
+              <span class="company-card-industry">Data Cloud & AI Infrastructure</span>
+            </div>
+          </div>
+          <div class="company-card-details">
+            <span class="company-card-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Bozeman & Remote
+            </span>
+            <span class="company-card-detail-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+              </svg>
+              6,500+ employees
+            </span>
+          </div>
+          <div class="company-card-footer">
+            <span class="open-jobs-pill">29 Open Positions</span>
+            <a href="#snowflake-jobs" class="btn btn-outline btn-sm">View Jobs</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Perks & Value Proposition Section
+       ========================================================================== -->
+  <section class="perks-section" id="why-us">
+    <div class="container">
+      
+      <div class="section-header-centered">
+        <span class="section-eyebrow" style="color: #818cf8;">Engineered for Developers</span>
+        <h2 class="section-title" style="color: var(--color-white);">Why Developers Choose JobSphere</h2>
+        <p class="section-subtitle" style="color: var(--color-slate-400);">
+          We removed everything painful about modern job boards and built the platform we wanted as software engineers.
+        </p>
+      </div>
+
+      <div class="perks-grid">
+        
+        <div class="perk-card">
+          <div class="perk-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3 class="perk-title">100% Salary Transparency</h3>
+          <p class="perk-desc">
+            No guessing games or "competitive salary" placeholders. Every single position includes validated base salary bands and equity options up front.
+          </p>
+        </div>
+
+        <div class="perk-card">
+          <div class="perk-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h3 class="perk-title">Direct Engineering Leads</h3>
+          <p class="perk-desc">
+            Skip automated resume-screening black holes. Your application is routed directly into the hiring engineering team's dashboard with guaranteed status tracking.
+          </p>
+        </div>
+
+        <div class="perk-card">
+          <div class="perk-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3 class="perk-title">Zero Recruiter Spam</h3>
+          <p class="perk-desc">
+            Candidate privacy first. Your profile is shielded from unsolicited cold sales messages, agency recruiters, and non-verified third parties.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top">
+        
+        <!-- Col 1: Brand & Bio -->
+        <div class="footer-brand-col">
+          <a href="#" class="brand">
+            <div class="brand-icon-wrapper">
+              <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <span class="brand-name">Job<span>Sphere</span></span>
+          </a>
+          <p class="footer-brand-desc">
+            The curated career platform built specifically for high-impact software developers, SREs, and technical leaders worldwide.
+          </p>
+          <div class="footer-status-pill">
+            <span class="status-dot"></span>
+            <span>All Platform Systems Operational</span>
+          </div>
+        </div>
+
+        <!-- Col 2: For Candidates -->
+        <div>
+          <h4 class="footer-col-title">For Engineers</h4>
+          <ul class="footer-nav-list">
+            <li><a href="signup.html" class="footer-link">Create Developer Profile</a></li>
+            <li><a href="#browse-jobs" class="footer-link">Browse All Jobs</a></li>
+            <li><a href="#remote-jobs" class="footer-link">Remote Tech Jobs</a></li>
+            <li><a href="#salary-calculator" class="footer-link">Salary Calculator</a></li>
+            <li><a href="#tech-stacks" class="footer-link">Search by Tech Stack</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: For Employers -->
+        <div>
+          <h4 class="footer-col-title">For Employers</h4>
+          <ul class="footer-nav-list">
+            <li><a href="signup.html" class="footer-link">Post a Job / Sign Up</a></li>
+            <li><a href="#talent-search" class="footer-link">Source Developers</a></li>
+            <li><a href="#pricing" class="footer-link">Hiring Plans</a></li>
+            <li><a href="#ats-integrations" class="footer-link">ATS Integrations</a></li>
+            <li><a href="#customer-stories" class="footer-link">Case Studies</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Platform -->
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#about" class="footer-link">About DevCareers</a></li>
+            <li><a href="#manifesto" class="footer-link">Our Manifesto</a></li>
+            <li><a href="#press" class="footer-link">News & Press</a></li>
+            <li><a href="#privacy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#terms" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Newsletter Subscription -->
+        <div class="newsletter-col">
+          <h4 class="footer-col-title">Engineering Dispatch</h4>
+          <p class="footer-brand-desc">
+            Get a weekly roundup of top verified engineering roles and transparent salary benchmarks.
+          </p>
+          <form class="newsletter-form" action="#newsletter-subscribed" method="POST">
+            <div class="newsletter-input-wrap">
+              <input type="email" required placeholder="developer@company.com" class="newsletter-input" aria-label="Work Email Address">
+              <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+            </div>
+            <span class="newsletter-note">Zero spam. Unsubscribe at any time.</span>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 JobSphere Inc. Built with semantic HTML5 and clean CSS3. All rights reserved.</p>
+        <p>Crafted for world-class software engineers.</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

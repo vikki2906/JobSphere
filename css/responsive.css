@@ -1,0 +1,219 @@
+/**
+ * JobSphere Design System - Responsive & Mobile Layouts
+ * Zero-JS responsive adaptations for 1024px, 768px, and 480px breakpoints
+ */
+
+/* ==========================================================================
+   Tablet Devices (max-width: 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 260px;
+    --gap-grid: 1.25rem;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer-brand-col {
+    grid-column: span 3;
+    max-width: 500px;
+  }
+
+  .newsletter-col {
+    grid-column: span 3;
+  }
+
+  .perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Mobile Landscape & Small Tablets (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Navigation Drawer (CSS-Only Toggle) */
+  .nav-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-container {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: var(--space-6);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+    box-shadow: var(--shadow-xl);
+    z-index: 99;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: var(--space-2);
+  }
+
+  .nav-link {
+    font-size: var(--font-size-base);
+    width: 100%;
+    padding: var(--space-2) 0;
+  }
+
+  .nav-actions {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .nav-actions .btn {
+    width: 100%;
+  }
+
+  /* Show nav container when checkbox toggle is checked */
+  #nav-toggle:checked ~ .header-inner .nav-container {
+    display: flex;
+  }
+
+  #nav-toggle:checked ~ .header-inner .nav-toggle-btn {
+    color: var(--color-primary);
+    background-color: var(--color-slate-100);
+  }
+
+  /* Search Container Form */
+  .search-form-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+
+  /* Two Column Main Feed Stacking */
+  .portal-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-sidebar {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  /* Stats Metric Strip */
+  .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  /* Featured Companies & Perks */
+  .companies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .perks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Feed Header */
+  .feed-header-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .sort-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Footer */
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .footer-brand-col,
+  .newsletter-col {
+    grid-column: span 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+}
+
+/* ==========================================================================
+   Small Mobile Phones (max-width: 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  :root {
+    --space-6: 1rem;
+    --space-8: 1.5rem;
+    --space-12: 2.25rem;
+    --space-16: 3rem;
+  }
+
+  .job-card {
+    padding: var(--space-4);
+  }
+
+  .job-card-header {
+    flex-direction: column-reverse;
+  }
+
+  .bookmark-wrapper {
+    align-self: flex-end;
+    margin-bottom: -2rem;
+  }
+
+  .job-company-details {
+    align-items: flex-start;
+  }
+
+  .company-avatar {
+    width: 44px;
+    height: 44px;
+    font-size: var(--font-size-lg);
+  }
+
+  .job-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .card-action-btns {
+    width: 100%;
+  }
+
+  .card-action-btns .btn {
+    flex: 1;
+  }
+
+  .newsletter-input-wrap {
+    flex-direction: column;
+  }
+}
