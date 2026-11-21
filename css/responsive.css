@@ -1,10 +1,20 @@
 /**
  * JobSphere Design System - Responsive & Mobile Layouts
- * Zero-JS responsive adaptations for 1024px, 768px, and 480px breakpoints
+ * Full responsive coverage: 1280px → 1024px → 768px → 480px → 360px
  */
 
 /* ==========================================================================
-   Tablet Devices (max-width: 1024px)
+   Large Desktops / Wide screens (max-width: 1280px)
+   ========================================================================== */
+@media (max-width: 1280px) {
+  .container {
+    padding-left: var(--space-5);
+    padding-right: var(--space-5);
+  }
+}
+
+/* ==========================================================================
+   Tablet / Small Laptop Devices (max-width: 1024px)
    ========================================================================== */
 @media (max-width: 1024px) {
   :root {
@@ -12,6 +22,28 @@
     --gap-grid: 1.25rem;
   }
 
+  /* Search form: stack keyword full-width, keep other two side-by-side */
+  .search-form-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+  }
+
+  .search-form-grid .search-input-group:first-child {
+    grid-column: span 2;
+  }
+
+  .search-btn {
+    grid-column: span 2;
+    width: 100%;
+    min-height: 44px;
+  }
+
+  /* Section titles scale down */
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  /* Footer: 3-column layout */
   .footer-top {
     grid-template-columns: 1fr 1fr 1fr;
     gap: var(--space-8);
@@ -19,15 +51,29 @@
 
   .footer-brand-col {
     grid-column: span 3;
-    max-width: 500px;
+    max-width: 480px;
   }
 
   .newsletter-col {
     grid-column: span 3;
   }
 
+  /* Perks: 2 columns on tablet */
   .perks-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Companies: 2 columns */
+  .companies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Stats strip: 2 × 2 grid */
+  .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    justify-items: center;
   }
 }
 
@@ -35,13 +81,15 @@
    Mobile Landscape & Small Tablets (max-width: 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-  /* Navigation Drawer (CSS-Only Toggle) */
+
+  /* ---- Navigation Drawer (CSS-Only Toggle) ---- */
   .nav-toggle-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
+    border-radius: var(--radius-sm);
   }
 
   .nav-container {
@@ -53,7 +101,7 @@
     width: 100%;
     background-color: var(--color-white);
     border-bottom: 1px solid var(--border-subtle);
-    padding: var(--space-6);
+    padding: var(--space-5) var(--space-6);
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-4);
@@ -66,13 +114,18 @@
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    gap: var(--space-2);
+    gap: var(--space-1);
   }
 
   .nav-link {
     font-size: var(--font-size-base);
     width: 100%;
-    padding: var(--space-2) 0;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-slate-100);
+  }
+
+  .nav-link:last-child {
+    border-bottom: none;
   }
 
   .nav-actions {
@@ -86,9 +139,10 @@
 
   .nav-actions .btn {
     width: 100%;
+    justify-content: center;
   }
 
-  /* Show nav container when checkbox toggle is checked */
+  /* Show drawer when checkbox is checked */
   #nav-toggle:checked ~ .header-inner .nav-container {
     display: flex;
   }
@@ -98,48 +152,70 @@
     background-color: var(--color-slate-100);
   }
 
-  /* Search Container Form */
+  /* ---- Hero Section ---- */
+  .hero-section {
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-10);
+  }
+
+  .hero-title {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-6);
+  }
+
+  /* ---- Search Box: Full-stack on mobile ---- */
   .search-form-grid {
     grid-template-columns: 1fr;
     gap: var(--space-3);
   }
 
-  .search-btn {
-    width: 100%;
+  .search-form-grid .search-input-group:first-child {
+    grid-column: span 1;
   }
 
-  /* Two Column Main Feed Stacking */
+  .search-btn {
+    grid-column: span 1;
+    width: 100%;
+    min-height: 48px;
+  }
+
+  /* ---- Stats Strip: 2 × 2 ---- */
+  .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+    justify-items: center;
+    padding-top: var(--space-5);
+  }
+
+  /* ---- Two-Column → Single Column ---- */
   .portal-layout {
     grid-template-columns: 1fr;
+    gap: var(--space-5);
   }
 
   .portal-sidebar {
     position: static;
     max-height: none;
     overflow-y: visible;
+    padding-right: 0;
   }
 
-  /* Stats Metric Strip */
-  .stats-strip {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-6);
-  }
-
-  /* Featured Companies & Perks */
-  .companies-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .perks-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Feed Header */
+  /* ---- Feed Header ---- */
   .feed-header-card {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-3);
+  }
+
+  .results-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
   }
 
   .sort-container {
@@ -147,7 +223,27 @@
     justify-content: space-between;
   }
 
-  /* Footer */
+  .sort-select-box {
+    flex: 1;
+  }
+
+  /* ---- Companies Grid: 1 column ---- */
+  .companies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ---- Perks Grid: 1 column ---- */
+  .perks-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  /* ---- Section Titles ---- */
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  /* ---- Footer ---- */
   .footer-top {
     grid-template-columns: 1fr;
     gap: var(--space-6);
@@ -156,12 +252,20 @@
   .footer-brand-col,
   .newsletter-col {
     grid-column: span 1;
+    max-width: none;
   }
 
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-4);
+    gap: var(--space-2);
+  }
+
+  /* ---- Pagination: compact ---- */
+  .pagination-wrapper {
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    justify-content: center;
   }
 }
 
@@ -170,35 +274,99 @@
    ========================================================================== */
 @media (max-width: 480px) {
   :root {
-    --space-6: 1rem;
-    --space-8: 1.5rem;
+    --space-6: 1.25rem;
+    --space-8: 1.75rem;
+    --space-10: 2rem;
     --space-12: 2.25rem;
     --space-16: 3rem;
   }
 
+  .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  /* ---- Hero ---- */
+  .hero-section {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+  }
+
+  .hero-title {
+    font-size: clamp(1.4rem, 7vw, 2rem);
+  }
+
+  .hero-badge-pill {
+    font-size: 0.65rem;
+    text-align: center;
+  }
+
+  /* ---- Search Chips: scroll row on very small screens ---- */
+  .search-chips-wrapper {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: var(--space-2);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .search-chips-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ---- Stats: 2 columns, smaller values ---- */
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .stat-value {
+    font-size: var(--font-size-lg);
+  }
+
+  /* ---- Job Card ---- */
   .job-card {
     padding: var(--space-4);
+    gap: var(--space-3);
   }
 
   .job-card-header {
     flex-direction: column-reverse;
+    gap: var(--space-2);
   }
 
   .bookmark-wrapper {
     align-self: flex-end;
-    margin-bottom: -2rem;
+    margin-bottom: -0.5rem;
   }
 
   .job-company-details {
     align-items: flex-start;
+    gap: var(--space-3);
   }
 
   .company-avatar {
     width: 44px;
     height: 44px;
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
   }
 
+  .job-title-link {
+    font-size: var(--font-size-base);
+  }
+
+  /* Badges: allow wrap, smaller text */
+  .job-badges-row {
+    gap: var(--space-1);
+  }
+
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  /* Card footer stacks vertically */
   .job-card-footer {
     flex-direction: column;
     align-items: flex-start;
@@ -207,13 +375,207 @@
 
   .card-action-btns {
     width: 100%;
+    gap: var(--space-2);
   }
 
   .card-action-btns .btn {
     flex: 1;
+    justify-content: center;
   }
 
+  /* ---- Section Headers ---- */
+  .section-title {
+    font-size: var(--font-size-xl);
+    letter-spacing: -0.01em;
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-sm);
+  }
+
+  /* ---- Company Cards ---- */
+  .company-card-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  /* ---- Perk Cards ---- */
+  .perk-card {
+    padding: var(--space-5);
+  }
+
+  /* ---- Newsletter ---- */
   .newsletter-input-wrap {
     flex-direction: column;
+  }
+
+  .newsletter-input-wrap .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ---- Pagination: hide ellipsis & extreme pages ---- */
+  .page-ellipsis + .page-btn:last-of-type {
+    display: none;
+  }
+
+  .page-btn {
+    min-width: 36px;
+    height: 36px;
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* ==========================================================================
+   Extra-Small Phones (max-width: 360px)
+   ========================================================================== */
+@media (max-width: 360px) {
+  .container {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+  }
+
+  .hero-title {
+    font-size: 1.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-sm);
+  }
+
+  /* Nav brand text hidden, logo only */
+  .brand-name {
+    display: none;
+  }
+
+  /* Stats: stack all 4 in 2 × 2 with less gap */
+  .stats-strip {
+    gap: var(--space-3);
+  }
+
+  .stat-value {
+    font-size: var(--font-size-base);
+  }
+
+  /* Single action button column */
+  .card-action-btns {
+    flex-direction: column;
+  }
+
+  .card-action-btns .btn {
+    width: 100%;
+  }
+
+  /* Company card footer stacks */
+  .company-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .company-card-footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Pagination: prev / next only */
+  .page-btn:not([aria-label]) {
+    display: none;
+  }
+
+  .page-btn[aria-current="page"] {
+    display: inline-flex;
+  }
+
+  .page-ellipsis {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Touch / Hover UX Improvements (for touch devices)
+   ========================================================================== */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover lift effects on touch - avoid sticky states */
+  .job-card:hover,
+  .company-card:hover,
+  .perk-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+    border-color: var(--border-subtle);
+  }
+
+  .btn:hover {
+    transform: none;
+  }
+
+  .chip-tag:hover {
+    transform: none;
+  }
+
+  /* Increase tap target sizes for accessibility */
+  .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-sm {
+    padding: 0.5rem 0.875rem;
+    min-height: 40px;
+  }
+
+  .checkbox-item {
+    min-height: 44px;
+  }
+
+  .page-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .bookmark-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ==========================================================================
+   Print Media
+   ========================================================================== */
+@media print {
+  .site-header,
+  .nav-toggle-btn,
+  .search-container-box,
+  .search-chips-wrapper,
+  .portal-sidebar,
+  .feed-header-card,
+  .card-action-btns,
+  .bookmark-wrapper,
+  .pagination-wrapper,
+  .perks-section,
+  .site-footer {
+    display: none !important;
+  }
+
+  .portal-layout {
+    display: block;
+  }
+
+  .portal-feed {
+    gap: var(--space-4);
+  }
+
+  .job-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
   }
 }
